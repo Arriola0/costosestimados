@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+
+
+
+.contenedorCelulaUno, .contenedorCelulaDos, .contenedorCelulaTres, .contenedorCelulaCinco, .contenedorCelulaSeis{
+    text-align: center;
+    margin-left: auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    grid-template-rows: repeat(4, min-content);
+}
+.cuadrosCelulaUno, .cuadrosCelulaDos, .cuadrosCelulaTres, .cuadrosCelulaCinco, .cuadrosCelulaSeis{
+    border: 1px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.inputCelulaUno, .inputCelulaDos, .inputCelulaTres{
+    min-width: 80px;
+    width: 80px;
+    margin: 0px 5px 0px 5px;
+    text-align: center;
+}
+.contenedor-btnCelulaUno, .contenedor-btnCelulaDos, .contenedor-btnCelulaTres, .contenedorCoefientes, .contenedor-btnCelulaCuatro, .contenedor-btnCelulaCinco, .contenedor-btnCelulaSeis{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn-celulaUno, .btn-celulaDos, .btn-celulaTres, .btnCoeficientes, .btn-celulaCuatro, .btn-celulaCinco, .btn-celulaSeis{
+   background: #000;
+   color: #fff;
+}
+
+h2, h1{
+    text-align: center;
+}
+.respuestaCoeficientes{
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    background: #0003;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    text-align: center;
+}
+.contenedorInputCoeficientes{
+    width: 100%;
+    text-align: center;
+}
+.inputCoeficientes{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedorCelulaCuatro{
+    text-align: center;
+    margin-left: auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, min-content);
+    grid-template-rows: repeat(4, min-content);
+}
+.cuadrosCelulaCuatro{
+    border: 1px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+
+
+
+
