@@ -52,16 +52,14 @@ const respuestaCCoeficientes = document.getElementById("respuestaCCoeficientes")
 
 
 const btnCelulaUno = document.getElementById("btn-celulaUno");
-
 const btnCelulaDos = document.getElementById("btn-celulaDos");
-
 const btnCelulaTres = document.getElementById("btn-celulaTres");
-
 const btnCoeficientes = document.getElementById("btnCoeficientes");
-
 const btnCelulaCuatro = document.getElementById("btn-celulaCuatro");
 const btnCelulaCinco = document.getElementById("btn-celulaCinco");
 const btnCelulaSeis = document.getElementById("btn-celulaSeis");
+const btnCelulaSiete = document.getElementById("btn-celulaSiete");
+const btnResumen = document.getElementById("btn-resumen");
 
 
 
@@ -123,8 +121,44 @@ const respuestaCifraAjusteCIFCelula6 = document.getElementById("respuestaCifraAj
 
 
 
+const respuestaCostoEstimadoMPCelula7 = document.getElementById("respuestaCostoEstimadoMPCelula7");
+const respuestaCostoEstimadoMOCelula7 = document.getElementById("respuestaCostoEstimadoMOCelula7");
+const respuestaCostoEstimadoCIFCelula7 = document.getElementById("respuestaCostoEstimadoCIFCelula7");
+
+const respuestaValorAjustadoMPCelula7 = document.getElementById("respuestaValorAjustadoMPCelula7");
+const respuestaValorAjustadoMOCelula7 = document.getElementById("respuestaValorAjustadoMOCelula7");
+const respuestaValorAjustadoCIFCelula7 = document.getElementById("respuestaValorAjustadoCIFCelula7");
+
+const respuestaCifraAjusteMPCelula7 = document.getElementById("respuestaCifraAjusteMPCelula7");
+const respuestaCifraAjusteMOCelula7 = document.getElementById("respuestaCifraAjusteMOCelula7");
+const respuestaCifraAjusteCIFCelula7 = document.getElementById("respuestaCifraAjusteCIFCelula7");
 
 
+//variable del resumen
+
+const resInventarioProduccionTerminadaMP = document.getElementById("resInventarioProduccionTerminadaMP");
+const resInventarioProduccionTerminadaMO = document.getElementById("resInventarioProduccionTerminadaMO");
+const resInventarioProduccionTerminadaCIF = document.getElementById("resInventarioProduccionTerminadaCIF");
+const resInventarioProduccionTerminadaTotal = document.getElementById("resInventarioProduccionTerminadaTotal");
+
+const resInventarioProduccionProcesoMP = document.getElementById("resInventarioProduccionProcesoMP");
+const resInventarioProduccionProcesoMO = document.getElementById("resInventarioProduccionProcesoMO");
+const resInventarioProduccionProcesoCIF = document.getElementById("resInventarioProduccionProcesoCIF");
+const resInventarioProduccionProcesoTotal = document.getElementById("resInventarioProduccionProcesoTotal");
+
+const resProduccionVendidoMP = document.getElementById("resProduccionVendidoMP");
+const resProduccionVendidoMO = document.getElementById("resProduccionVendidoMO");
+const resProduccionVendidoCIF = document.getElementById("resProduccionVendidoCIF");
+const resProduccionVendidoTotal = document.getElementById("resProduccionVendidoTotal");
+
+const resTotalMP = document.getElementById("resTotalMP");
+const resTotalMO = document.getElementById("resTotalMO");
+const resTotalCIF = document.getElementById("resTotalCIF");
+const resTotalCuadrado = document.getElementById("resTotalCuadrado");
+
+
+
+const fraseFinal = document.getElementById("fraseFinal");
 
 
 
@@ -367,7 +401,7 @@ btnCelulaCinco.addEventListener("click", ()=>{
 
 
 
-
+//aqui la celula 6
 btnCelulaSeis.addEventListener("click", ()=>{
 
     //costo estimdo total
@@ -455,11 +489,158 @@ btnCelulaSeis.addEventListener("click", ()=>{
 
 
 
+//aqui celula 7.
+
+
+btnCelulaSiete.addEventListener("click", ()=>{
+    let costoEstimadoMPA = parseFloat(unidadesACelulaTres.value) * parseFloat(costoACelulaTres.value);
+    respuestaCostoEstimadoMPCelula7.innerHTML = costoEstimadoMPA;
+
+    let costoEstimadoMOB = parseFloat(unidadesBCelulaTres.value) * parseFloat(costoBCelulaTres.value);
+    respuestaCostoEstimadoMOCelula7.innerHTML = costoEstimadoMOB;
+
+    let costoEstimadoCIFC = parseFloat(unidadesCCelulaTres.value) * parseFloat(costoCCelulaTres.value);
+    respuestaCostoEstimadoCIFCelula7.innerHTML = costoEstimadoCIFC;
+
+
+
+    let unidadesCelulaTresMP = parseFloat(unidadesACelulaTres.value);
+    let unidadesCelulaTresMO = parseFloat(unidadesBCelulaTres.value);
+    let unidadesCelulaTresCIF = parseFloat(unidadesCCelulaTres.value);
+
+
+
+    //costo unitario corregido
+    let costoEstimadoUniMP = costoACelulaUno.value;
+    let costoEstimadoUniMO = costoBCelulaUno.value;
+    let costoEstimadoUniCIF = costoCCelulaUno.value;
+
+    respuestaCostoEstimadoMP.innerHTML = costoEstimadoUniMP;
+    respuestaCostoEstimadoMO.innerHTML = costoEstimadoUniMO;
+    respuestaCostoEstimadoCIF.innerHTML = costoEstimadoUniCIF;
+
+
+    let resACelulaUno = parseFloat(unidadesACelulaUno.value) * parseFloat(costoACelulaUno.value);
+    let resACelulaDos = parseFloat(unidadesACelulaDos.value) * parseFloat(costoACelulaDos.value);
+    let costoEstimadoMP = resACelulaUno + resACelulaDos;
+    
+    let resBCelulaUno = parseFloat(unidadesBCelulaUno.value) * parseFloat(costoBCelulaUno.value);
+    let resBCelulaDos = parseFloat(unidadesBCelulaDos.value) * parseFloat(costoBCelulaDos.value);
+    let costoEstimadoMO = resBCelulaUno + resBCelulaDos;
+
+    let resCCelulaUno = parseFloat(unidadesCCelulaUno.value) * parseFloat(costoCCelulaUno.value);
+    let resCCelulaDos = parseFloat(unidadesCCelulaDos.value) * parseFloat(costoCCelulaDos.value);
+    let costoEstimadoCIF = resCCelulaUno + resCCelulaDos;
+
+    let costoRealMP = inputACoeficientes.value;
+    let costoRealMO = inputBCoeficientes.value;
+    let costoRealCIF = inputCCoeficientes.value;
+
+    let variacionMP = parseFloat(costoRealMP) - parseFloat(costoEstimadoMP);
+    let variacionMO = parseFloat(costoRealMO) - parseFloat(costoEstimadoMO);
+    let variacionCIF = parseFloat(costoRealCIF) - parseFloat(costoEstimadoCIF);
+
+    let coeficienteMP = variacionMP / costoEstimadoMP;
+    let coeficienteMO = variacionMO / costoEstimadoMO;
+    let coeficienteCIF = variacionCIF / costoEstimadoCIF;
+
+
+
+    let cifraCorreccionMP = parseFloat(costoEstimadoUniMP) * parseFloat(coeficienteMP);
+    let cifraCorreccionMO = parseFloat(costoEstimadoUniMO) * parseFloat(coeficienteMO);
+    let cifraCorrecionCIF = parseFloat(costoEstimadoUniCIF) * parseFloat(coeficienteCIF);
+
+
+
+    let costoUniCorregidoMP = parseFloat(costoEstimadoUniMP) + parseFloat(cifraCorreccionMP);
+    let costoUniCorregidoMO = parseFloat(costoEstimadoUniMO) + parseFloat(cifraCorreccionMO);
+    let costoUniCorregidoCIF = parseFloat(costoEstimadoUniCIF) + parseFloat(cifraCorrecionCIF);
 
 
 
 
 
+    let valorAjustadoMP = parseFloat(unidadesCelulaTresMP) * parseFloat(costoUniCorregidoMP);
+    respuestaValorAjustadoMPCelula7.innerHTML = valorAjustadoMP;
+    let valorAjustadoMO = parseFloat(unidadesCelulaTresMO) * parseFloat(costoUniCorregidoMO);
+    respuestaValorAjustadoMOCelula7.innerHTML = valorAjustadoMO;
+    let valorAjustadoCIF = parseFloat(unidadesCelulaTresCIF) * parseFloat(costoUniCorregidoCIF);
+    respuestaValorAjustadoCIFCelula7.innerHTML = valorAjustadoCIF;
+
+
+
+    let cifraAjusteMPCelula7 = parseFloat(valorAjustadoMP) - parseFloat(costoEstimadoMPA);
+    respuestaCifraAjusteMPCelula7.innerHTML = cifraAjusteMPCelula7;
+    let cifraAjusteMOCelula7 = parseFloat(valorAjustadoMO) - parseFloat(costoEstimadoMOB);
+    respuestaCifraAjusteMOCelula7.innerHTML = cifraAjusteMOCelula7;
+    let cifraAjusteCIFCelula7 = parseFloat(valorAjustadoCIF) - parseFloat(costoEstimadoCIFC);
+    respuestaCifraAjusteCIFCelula7.innerHTML = cifraAjusteCIFCelula7;
+
+});
+
+
+
+
+
+
+
+//resumen
+btnResumen.addEventListener("click", ()=>{
+  
+
+    let celula5ResA = parseFloat(respuestaCifraAjusteMP.textContent).toFixed(2);
+    resInventarioProduccionTerminadaMP.innerHTML = celula5ResA;
+    let celula5ResB = parseFloat(respuestaCifraAjusteMO.textContent).toFixed(2); 
+    resInventarioProduccionTerminadaMO.innerHTML = celula5ResB;
+    let celula5ResC = parseFloat(respuestaCifraAjusteCIF.textContent).toFixed(2);
+    resInventarioProduccionTerminadaCIF.innerHTML = celula5ResC;  
+    
+
+    let totalProduccionTerminada = parseFloat(celula5ResA) + parseFloat(celula5ResB) + parseFloat(celula5ResC);
+    resInventarioProduccionTerminadaTotal.innerHTML = totalProduccionTerminada.toFixed(2);
+
+
+    let celula6ResA = parseFloat(respuestaCifraAjusteMPCelula6.textContent).toFixed(2);
+    resInventarioProduccionProcesoMP.innerHTML = celula6ResA;
+    let celula6ResB = parseFloat(respuestaCifraAjusteMOCelula6.textContent).toFixed(2);
+    resInventarioProduccionProcesoMO.innerHTML = celula6ResB;
+    let celula6ResC = parseFloat(respuestaCifraAjusteCIFCelula6.textContent).toFixed(2);
+    resInventarioProduccionProcesoCIF.innerHTML = celula6ResC;
+
+    let totalProduccionProceso = parseFloat(celula6ResA) + parseFloat(celula6ResB) + parseFloat(celula6ResC);
+    resInventarioProduccionProcesoTotal.innerHTML = totalProduccionProceso.toFixed(2);
+
+
+    let celula7ResA = parseFloat(respuestaCifraAjusteMPCelula7.textContent).toFixed(2);
+    resProduccionVendidoMP.innerHTML = celula7ResA;
+    let celula7ResB = parseFloat(respuestaCifraAjusteMOCelula7.textContent).toFixed(2);
+    resProduccionVendidoMO.innerHTML = celula7ResB;
+    let celula7ResC = parseFloat(respuestaCifraAjusteCIFCelula7.textContent).toFixed(2);
+    resProduccionVendidoCIF.innerHTML = celula7ResC;
+
+
+    let totalProduccionVendido = parseFloat(celula7ResA) + parseFloat(celula7ResB) + parseFloat(celula7ResC);
+    resProduccionVendidoTotal.innerHTML = totalProduccionVendido.toFixed(2);
+
+
+    let totalColumnaMP = parseFloat(celula5ResA) + parseFloat(celula6ResA) + parseFloat(celula7ResA);
+    resTotalMP.innerHTML = totalColumnaMP.toFixed(2); 
+    let totalColumnaMO = parseFloat(celula5ResB) + parseFloat(celula6ResB) + parseFloat(celula7ResB);
+    resTotalMO.innerHTML = totalColumnaMO.toFixed(2);
+    let totalColumnaCIF = parseFloat(celula5ResC) + parseFloat(celula6ResC) + parseFloat(celula7ResC);
+    resTotalCIF.innerHTML = totalColumnaCIF.toFixed(2); 
+    
+    
+    let totalAmbos = parseFloat(totalColumnaMP) + parseFloat(totalColumnaMO) + parseFloat(totalColumnaCIF);
+    resTotalCuadrado.innerHTML = totalAmbos.toFixed(2); 
+
+
+
+
+    fraseFinal.style.visibility = "visible";
+
+
+});
 
 
 
