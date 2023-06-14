@@ -15,7 +15,7 @@ html{
     display: grid;
     grid-template-columns: repeat(4, min-content);
     grid-template-rows: repeat(4, min-content);
-    color: #fff;
+    color: #000;
 }
 .contenedorCelulaUno{
     background: rgb(130,255,246);
@@ -88,7 +88,7 @@ h2, h1{
     padding: 10px;
     background: rgb(186,138,177);
     background: linear-gradient(0deg, rgba(186,138,177,1) 14%, rgba(143,255,130,1) 100%);
-    color: #fff;
+    color: #000;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
@@ -112,7 +112,7 @@ h2, h1{
     display: grid;
     grid-template-columns: repeat(5, min-content);
     grid-template-rows: repeat(4, min-content);
-    color: #fff;
+    color: #000;
 }
 .cuadrosCelulaCuatro{
     border: 1px solid #000;
@@ -127,7 +127,7 @@ h2, h1{
     display: grid;
     grid-template-columns: repeat(5, min-content);
     grid-template-rows: repeat(5, min-content);
-    color: #fff;
+    color: #000;
 }
 .cuadrosResumen{
     border: 1px solid #000;
