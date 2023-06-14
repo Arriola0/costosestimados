@@ -56,10 +56,8 @@ html{
 
 .cuadrosCelulaUno, .cuadrosCelulaDos, .cuadrosCelulaTres, .cuadrosCelulaCinco, .cuadrosCelulaSeis, .cuadrosCelulaSiete{
     border: 1px solid #000;
-    padding-top: 10px;
-    padding-bottom: 10px;
     font-size: 1.5rem;
-    padding: 5px;
+    padding: 20px;
 }
 
 .inputCelulaUno, .inputCelulaDos, .inputCelulaTres{
@@ -119,7 +117,7 @@ h2, h1{
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 1.5rem;
-    padding: 10px;
+    padding: 20px;
 }
 .contenedorResumen{
     text-align: center;
